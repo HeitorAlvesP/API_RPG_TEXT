@@ -2,7 +2,7 @@ import sqlite3 from 'sqlite3';
 
 async function createTables(db) {
     try {
-        await db.exec(`
+        await db.exec(/*sql*/`
 
             CREATE TABLE IF NOT EXISTS personagem (
                 id_personagem INTEGER PRIMARY KEY AUTOINCREMENT,

@@ -5,7 +5,7 @@ import path from 'path';
 import createTables from './criar_tabelas.js';
 
 async function initDb() {
-    const dbPath = './database/banco.db';
+    const dbPath = './src/database/security/banco.db';
 
     try {
         const dirExists = fs.existsSync(path.dirname(dbPath));
