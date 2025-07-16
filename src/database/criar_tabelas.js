@@ -7,11 +7,11 @@ async function createTables(db) {
             CREATE TABLE IF NOT EXISTS personagem (
                 id_personagem INTEGER PRIMARY KEY AUTOINCREMENT,
                 nome_personagem VARCHAR(45) NOT NULL UNIQUE,
-                level_personagem FLOAT,
-                vida_personagem INT NOT NULL,
+                level_personagem INT DEFAULT 1 NOT NULL,
+                vida_personagem INT DEFAULT 10 NULL,
                 clase_personagem INT NOT NULL,
                 inventario_pak INT UNIQUE,
-                ouro_personagem INT,
+                ouro_personagem INT DEFAULT 10 NULL,
                 status_personagem INT DEFAULT 1 NOT NULL,
                 time_create TIMESTAMP DEFAULT CURRENT_TIMESTAMP
             );
@@ -93,6 +93,9 @@ async function createTables(db) {
             VALUES ('Tocha', 'Clareia seu caminho'),
                    ('Corda', 'Pode usar para esclar'),
                    ('Garrafa', 'Pode aguardar liquidos');
+            
+            INSERT INTO personagem (nome_personagem, clase_personagem, inventario_pak)
+            VALUES ('Teste-1', 1, 1);
                 
         `);
 
